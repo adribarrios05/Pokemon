@@ -1,12 +1,12 @@
-package com.example.pokedex.data.remote
+package com.example.pokedex.data.local
 
 import com.example.pokedex.data.Pokemon
 import kotlinx.coroutines.flow.Flow
 
-interface PokemonRemoteDataSource {
+interface PokemonLocalDataSource {
 
+    suspend fun insert(pokemons: List<Pokemon>)
     suspend fun readAll(): List<Pokemon>
-    suspend fun readOne(id:Int):Pokemon
-    suspend fun readOne(name: String): Pokemon
     fun observeAll(): Flow<List<Pokemon>>
+
 }

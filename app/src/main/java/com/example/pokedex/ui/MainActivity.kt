@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private val viewModel: MainActivityViewModel by viewModels()
+    private val viewModel: PokemonListViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,13 +27,5 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        binding.readPokemonButton.setOnClickListener {
-            lifecycleScope.launch {
-                val pokemons = viewModel.read()
-                binding.pokemonResult.text = pokemons
-            }
-        }
-
     }
 }

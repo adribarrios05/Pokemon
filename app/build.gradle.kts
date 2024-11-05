@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.example.pokedex"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.pokedex"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -46,11 +46,15 @@ kapt {
 
 dependencies {
 
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.hilt.lifecycle.viewmodel)
     implementation (libs.converter.moshi)
     implementation (libs.moshi)
     implementation (libs.moshi.kotlin)
     implementation (libs.converter.scalars)
     implementation(libs.hilt.android)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
     kapt(libs.hilt.android.compiler)
     implementation(libs.retrofit)
     implementation(libs.androidx.core.ktx)
