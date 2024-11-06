@@ -11,7 +11,7 @@ class PokemonListViewModel @Inject constructor(
     private val repository: PokemonRepository
 ) :ViewModel() {
     suspend fun read(): List<Pokemon> {
-        var pokemonList: List<Pokemon> = repository.readAll()
+        val pokemonList: List<Pokemon> = repository.readAll()
         return pokemonList
     }
 }
